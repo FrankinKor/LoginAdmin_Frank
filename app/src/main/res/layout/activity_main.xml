@@ -30,6 +30,7 @@
         <EditText
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:id="@+id/loginId"
             android:hint="이메일 양식"
             android:textSize="20dp"
             android:inputType="textEmailAddress"/>
@@ -44,6 +45,7 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/loginPassword"
         android:hint="비밀번호를 입력햊쉐요"
         android:textSize="20dp"
         android:inputType="textPassword"/>
