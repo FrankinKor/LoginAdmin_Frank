@@ -16,7 +16,7 @@
         <ImageView
             android:layout_width="200dp"
             android:layout_height="100dp"
-            android:src="@drawable/uni_logo"
+            android:src="@drawable/sunny"
             android:scaleType="fitCenter"/>
 
     </LinearLayout>
