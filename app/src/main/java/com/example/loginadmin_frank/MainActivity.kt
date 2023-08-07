@@ -1,5 +1,6 @@
 package com.example.loginadmin_frank
 
+import android.app.Activity
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -8,6 +9,7 @@ import kotlinx.android.synthetic.main.activity_main.editNicknameBtn
 import kotlinx.android.synthetic.main.activity_main.loginBtn
 import kotlinx.android.synthetic.main.activity_main.loginId
 import kotlinx.android.synthetic.main.activity_main.loginPassword
+import kotlinx.android.synthetic.main.activity_main.nicknameTxt
 
 class MainActivity : AppCompatActivity() {
 
@@ -42,5 +44,22 @@ class MainActivity : AppCompatActivity() {
         }
 
 
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+//        돌아온 이유가 닉네임을 받으러 다녀온게 맞는지??
+        if (requestCode == REQUEST_FOR_NICKNAME) {
+
+//            추가질문 : 확인을 눌러서 돌아온게 맞는가?
+
+            if (resultCode == Activity.RESULT_OK) {
+//                실제 첨부된 새 닉네임을 꺼내서 텍스트뷰 반영
+
+                val newNickname = data?.getStringExtra("nickname")
+                nicknameTxt.text = newNickname
+            }
+        }
     }
 }
