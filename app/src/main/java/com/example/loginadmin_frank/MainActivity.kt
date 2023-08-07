@@ -1,16 +1,29 @@
 package com.example.loginadmin_frank
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Toast
+import kotlinx.android.synthetic.main.activity_main.editNicknameBtn
 import kotlinx.android.synthetic.main.activity_main.loginBtn
 import kotlinx.android.synthetic.main.activity_main.loginId
 import kotlinx.android.synthetic.main.activity_main.loginPassword
 
 class MainActivity : AppCompatActivity() {
+
+    val REQUEST_FOR_NICKNAME = 1005
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        editNicknameBtn.setOnClickListener {
+
+
+            val myIntent = Intent(this, EditNickname::class.java)
+            startActivityForResult(myIntent, REQUEST_FOR_NICKNAME)
+
+        }
+
 
         loginBtn.setOnClickListener {
 
